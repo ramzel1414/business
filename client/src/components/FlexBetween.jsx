@@ -1,4 +1,4 @@
-const { styled, Box } = require("@mui/system");
+import { styled, Box } from "@mui/system";
 
 const FlexBetween = styled(Box)({
   display: "flex",
