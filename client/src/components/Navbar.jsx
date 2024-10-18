@@ -13,7 +13,10 @@ import { setMode } from '../state'
 import profileImage from '../assets/ramona.jpg'
 import { AppBar, IconButton, InputBase, Toolbar, useTheme } from '@mui/material'
 
-export const Navbar = () => {
+export const Navbar = ({
+  isSidebarOpen,
+  setIsSidebarOpen,
+}) => {
   const dispatch = useDispatch();
   const theme = useTheme();
 
@@ -27,7 +30,7 @@ export const Navbar = () => {
 
       {/* left side */}
       <FlexBetween>
-        <IconButton onClick={() => console.log('open/close sidebar')}>
+        <IconButton onClick={() => setIsSidebarOpen(!isSidebarOpen)}>
           <MenuIcon />
         </IconButton>
         <FlexBetween 
