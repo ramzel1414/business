@@ -19,7 +19,7 @@ export const api = createApi({
     }),
     getTransactions: build.query({
       query: ({ page, pageSize, sort, search}) => ({
-        url: "client/Transactions",
+        url: "client/transactions",
         method: "GET",
         params: { page, pageSize, sort, search },
       }),
