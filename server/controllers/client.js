@@ -35,6 +35,30 @@ export const getCustomers = async (req, res) => {
   }
 };
 
+export const customerAuth = async (req, res) => {
+  try {
+    const customers = await User.find({ role: "user" });
+    res.status(200).json(customers);
+  } catch (error) {
+    res.status(404).json({ message: error.message });
+  }
+};
+
+export const customerLogin = async (req, res) => {
+
+  res.json({message: 'login'});
+};
+
+export const customerRegister = async (req, res) => {
+
+  res.json({message: 'register'});
+};
+
+export const customerLogout = async (req, res) => {
+
+  res.json({message: 'logout'});
+};
+
 export const getTransactions = async (req, res) => {
   try {
     // sort should look like this: { "field": "userId", "sort": "desc"}
